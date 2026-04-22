@@ -14,24 +14,22 @@ body {
 }
 
 #peliWrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+#hud {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 /* Pisteiden näyttö */
 #pisteetNaytto {
-  position: absolute;
-  top: 12px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 28px;
   color: #00ffe1;
   text-shadow: 0 0 12px #00ffe1;
-  pointer-events: none;
 }
 
 /* Peliruutu */
@@ -43,15 +41,11 @@ canvas {
 
 /* Ohjeet peliruudun alla */
 #ohjeet {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
   color: #88ffee;
   font-size: 12px;
   letter-spacing: 2px;
   text-shadow: 0 0 8px #00ffe1;
-  pointer-events: none;
+  margin-top: 6px;
 }
 
 #aloitusRuutu {
@@ -132,5 +126,20 @@ canvas {
 #uudelleenBtn:hover {
   background: #ff3df2;
   color: #000;
+}
+
+@media (max-width: 768px) {
+  #pisteetNaytto {
+    font-size: 18px;
+  }
+
+  #ohjeet {
+    font-size: 11px;
+  }
+
+  canvas {
+    width: 95vw;
+    height: auto;
+  }
 }
 
