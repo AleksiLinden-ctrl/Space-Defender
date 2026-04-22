@@ -13,6 +13,10 @@ const TEEMA = {
   räjähdys: "#ffb000"
 };
 
+let kosketusLiikkui = false;
+let kosketusAlkuX = 0;
+let kosketusAlkuY = 0;
+
 let elamat = 3;
 
 let vihollisNopeusKerroin = 1;
@@ -105,16 +109,27 @@ canvas.addEventListener("touchstart", function(e) {
 
   kosketusAktiivinen = true;
   kosketusAlkuAika = Date.now();
+  kosketusLiikkui = false;
 
   const rect = canvas.getBoundingClientRect();
-  kosketusX = e.touches[0].clientX - rect.left;
+  kosketusAlkuX = e.touches[0].clientX - rect.left;
+  kosketusAlkuY = e.touches[0].clientY - rect.top;
+
+  kosketusX = kosketusAlkuX;
 });
 
 canvas.addEventListener("touchmove", function(e) {
   e.preventDefault();
 
   const rect = canvas.getBoundingClientRect();
-  kosketusX = e.touches[0].clientX - rect.left;
+  const uusiX = e.touches[0].clientX - rect.left;
+  const uusiY = e.touches[0].clientY - rect.top;
+
+  if (Math.abs(uusiX - kosketusAlkuX) > 10 || Math.abs(uusiY - kosketusAlkuY) > 10) {
+    kosketusLiikkui = true;
+  }
+
+  kosketusX = uusiX;
 });
 
 canvas.addEventListener("touchend", function(e) {
@@ -123,7 +138,8 @@ canvas.addEventListener("touchend", function(e) {
   kosketusAktiivinen = false;
 
   const kesto = Date.now() - kosketusAlkuAika;
-  if (kesto < 200) {
+  
+  if (!kosketusLiikkui && kesto < 200) {
     luoAmmus();
   }
 });
