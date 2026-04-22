@@ -21,7 +21,9 @@ body {
 }
 
 #hud {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Pisteiden näyttö */
@@ -29,6 +31,8 @@ body {
   font-size: 28px;
   color: #00ffe1;
   text-shadow: 0 0 12px #00ffe1;
+
+  white-space: nowrap;
 }
 
 /* Peliruutu */
@@ -129,7 +133,7 @@ canvas {
 
 @media (max-width: 768px) {
   #pisteetNaytto {
-    font-size: 18px;
+    font-size: clamp(12px, 4vw, 18px);
   }
 
   #ohjeet {
