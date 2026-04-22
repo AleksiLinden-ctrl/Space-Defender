@@ -1,0 +1,136 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+    /* Sivun taustaväri ja asettelu */
+body {
+  margin: 0;
+  background: radial-gradient(circle at center, #0a0f2a, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#peliWrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pisteiden näyttö */
+#pisteetNaytto {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 28px;
+  color: #00ffe1;
+  text-shadow: 0 0 12px #00ffe1;
+  pointer-events: none;
+}
+
+/* Peliruutu */
+canvas {
+  background: #050b1f;
+  border: 2px solid #00ffe1;
+  box-shadow: 0 0 25px #00ffe1;
+}
+
+/* Ohjeet peliruudun alla */
+#ohjeet {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #88ffee;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #00ffe1;
+  pointer-events: none;
+}
+
+#aloitusRuutu {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #0a0f2a, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: #00ffe1;
+  text-align: center;
+}
+
+#aloitusRuutu h1 {
+  font-size: 48px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 20px #00ffe1;
+  margin-bottom: 40px;
+}
+
+#aloitaBtn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  padding: 14px 40px;
+  border: 2px solid #00ffe1;
+  background: transparent;
+  color: #00ffe1;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffe1;
+  transition: 0.2s;
+}
+
+#aloitaBtn:hover {
+  background: #00ffe1;
+  color: #000;
+  box-shadow: 0 0 30px #00ffe1;
+}
+
+#gameOverRuutu {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, #0a0f2a, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+  color: #ff3df2;
+  text-align: center;
+}
+
+#gameOverRuutu h1 {
+  font-size: 48px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 25px #ff3df2;
+  margin-bottom: 20px;
+}
+
+#loppuPisteet {
+  font-size: 26px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 12px #ff3df2;
+}
+
+#uudelleenBtn {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  padding: 14px 40px;
+  border: 2px solid #ff3df2;
+  background: transparent;
+  color: #ff3df2;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff3df2;
+}
+
+#uudelleenBtn:hover {
+  background: #ff3df2;
+  color: #000;
+}
+
