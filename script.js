@@ -404,7 +404,7 @@ function paivitaOhjeTeksti() {
 
   if (window.innerWidth <= 768) {
   ohje.innerHTML = `
-    LIIKU = Sormella hahmon liikuttaminen<br>
+    LIIKU = Sormella hahmon liikuttaminen
     PAINELLUS = Ammu
     `;
   } else {
