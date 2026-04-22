@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+  <title>Space Defender</title>
+  </head>
+<body>
+
+  <div id="aloitusRuutu">
+    <h1>ALIEN SPACE DEFENDER</h1>
+    <button id="aloitaBtn">Aloita peli</button>
+  </div>
+
+  <div id="peliWrapper">
+
+    <div id="hud">
+  <div id="pisteetNaytto"></div>
+  <div id="ohjeet"></div>
+</div>
+
+  <canvas id="peliAlue" width="400" height="550"></canvas>
+
+  <div id="gameOverRuutu" style="display:none;">
+    <h1>GAME OVER</h1>
+    <p id="loppuPisteet"></p>
+    <button id="uudelleenBtn">Yritä uudelleen</button>
+  </div>
+  </div>
+
+  </body>
+</html>
